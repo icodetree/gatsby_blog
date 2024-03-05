@@ -2,14 +2,7 @@ import React, { FunctionComponent } from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 
-type PostItemProps = {
-  title: string
-  date: string
-  categories: string[]
-  summary: string
-  thumbnail: string
-  link: string
-}
+
 
 const PostItemWrapper = styled(Link)`
   display: flex;
@@ -87,6 +80,20 @@ const PostItemContent = styled.div`
   flex-direction: column;
   padding: 15px;
 `
+
+
+type PostItemProps = {
+  title: string
+  date: string
+  categories: string[]
+  summary: string
+  thumbnail: {
+    publicURL: string
+  }
+  link: string
+}
+
+
 const PostItem: FunctionComponent<PostItemProps> = function ({
     title,
     date,
